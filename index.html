@@ -1,19 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Real-Time Chat</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <title>Messenger</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    /* Messenger layout */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .messenger {
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 280px;
+      background-color: #F5F5F5;
+      padding: 20px;
+    }
+
+    .chat-area {
+      flex: 1;
+      background-color: #FFFFFF;
+      padding: 20px;
+    }
+
+    /* Styling for messages */
+    .message {
+      margin-bottom: 10px;
+    }
+
+    .message .sender {
+      font-weight: bold;
+    }
+
+    .message .content {
+      margin-top: 5px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Real-Time Chat</h1>
-    <div id="chat-container"></div>
-    <div id="message-container"></div>
-    <div id="input-container">
-      <input type="text" id="message-input" placeholder="Message">
-      <button id="send-button">send</button>
+  <div class="messenger">
+    <div class="sidebar">
+      <!-- Sidebar content (e.g., contact list, conversations) -->
+      <h2>Contact List</h2>
+      <ul>
+        <li>John Doe</li>
+        <li>Jane Smith</li>
+        <li>David Johnson</li>
+      </ul>
+      <h2>Choose Nickname</h2>
+      <input type="text" id="nicknameInput">
+      <button onclick="setNickname()">Set Nickname</button>
+    </div>
+    <div class="chat-area">
+      <!-- Chat area content (e.g., messages) -->
+      <h2 id="chatTitle"></h2>
+      <div id="messageContainer"></div>
+      <div id="messageForm">
+        <input type="text" id="messageInput">
+        <button onclick="sendMessage()">Send</button>
+      </div>
     </div>
   </div>
+
+  <script>
+    // Set nickname
+    function setNickname() {
+      var nickname = document.getElementById("nicknameInput").value;
+      document.getElementById("chatTitle").textContent = "Chat with " + nickname;
+    }
+
+    // Send message
+    function sendMessage() {
+      var messageInput = document.getElementById("messageInput");
+      var message = messageInput.value;
+      messageInput.value = "";
+
+      var sender = document.createElement("div");
+      sender.classList.add("sender");
+      sender.textContent = "You:";
+
+      var content = document.createElement("div");
+      content.classList.add("content");
+      content.textContent = message;
+
+      var messageContainer = document.getElementById("messageContainer");
+      var messageElement = document.createElement("div");
+      messageElement.classList.add("message");
+      messageElement.appendChild(sender);
+      messageElement.appendChild(content);
+      messageContainer.appendChild(messageElement);
+    }
+  </script>
 </body>
 </html>
