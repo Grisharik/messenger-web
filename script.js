@@ -1,4 +1,4 @@
-// Функция для добавления сообщения в чат
+
 function addMessage(message) {
   const messageContainer = document.getElementById('message-container');
   const newMessage = document.createElement('p');
@@ -6,19 +6,19 @@ function addMessage(message) {
   messageContainer.appendChild(newMessage);
 }
 
-// Обработчик события для кнопки отправки
+
 document.getElementById('send-button').addEventListener('click', function() {
   const messageInput = document.getElementById('message-input');
   const message = messageInput.value;
   
-  // Проверка наличия сообщения
+  // ГЏГ°Г®ГўГҐГ°ГЄГ  Г­Г Г«ГЁГ·ГЁГї Г±Г®Г®ГЎГ№ГҐГ­ГЁГї
   if (message.trim() !== '') {
     addMessage(message);
     messageInput.value = '';
   }
 });
 
-// Обработчик события для клавиши Enter
+
 document.getElementById('message-input').addEventListener('keyup', function(event) {
   if (event.key === 'Enter') {
     event.preventDefault();
@@ -26,6 +26,3 @@ document.getElementById('message-input').addEventListener('keyup', function(even
   }
 });
 
-// Добавление некоторых смайликов
-addMessage('Привет! ??');
-addMessage('Как дела? ??');
