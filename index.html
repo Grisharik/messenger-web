@@ -1,101 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Messenger</title>
-  <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
-  <style>
-    /* Messenger layout */
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+<html lang="en">
+          <head>
+            <meta charset="utf-8">
+          
+            <title>Html Generated</title>
+            <meta name="description" content="Figma htmlGenerator">
+            <meta name="author" content="htmlGenerator">
+            <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
 
-    .messenger {
-      display: flex;
-      height: 100vh;
-    }
-
-    .sidebar {
-      width: 280px;
-      background-color: #F5F5F5;
-      padding: 20px;
-    }
-
-    .chat-area {
-      flex: 1;
-      background-color: #FFFFFF;
-      padding: 20px;
-    }
-
-    /* Styling for messages */
-    .message {
-      margin-bottom: 10px;
-    }
-
-    .message .sender {
-      font-weight: bold;
-    }
-
-    .message .content {
-      margin-top: 5px;
-    }
-  </style>
-</head>
-<body>
-  <div class="messenger">
-    <div class="sidebar">
-      <!-- Sidebar content (e.g., contact list, conversations) -->
-      <h2>Contact List</h2>
-      <ul>
-        <li>John Doe</li>
-        <li>Jane Smith</li>
-        <li>David Johnson</li>
-      </ul>
-      <h2>Choose Nickname</h2>
-      <input type="text" id="nicknameInput">
-      <button onclick="setNickname()">Set Nickname</button>
-    </div>
-    <div class="chat-area">
-      <!-- Chat area content (e.g., messages) -->
-      <h2 id="chatTitle"></h2>
-      <div id="messageContainer"></div>
-      <div id="messageForm">
-        <input type="text" id="messageInput">
-        <button onclick="sendMessage()">Send</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Set nickname
-    function setNickname() {
-      var nickname = document.getElementById("nicknameInput").value;
-      document.getElementById("chatTitle").textContent = "Chat with " + nickname;
-    }
-
-    // Send message
-    function sendMessage() {
-      var messageInput = document.getElementById("messageInput");
-      var message = messageInput.value;
-      messageInput.value = "";
-
-      var sender = document.createElement("div");
-      sender.classList.add("sender");
-      sender.textContent = "You:";
-
-      var content = document.createElement("div");
-      content.classList.add("content");
-      content.textContent = message;
-
-      var messageContainer = document.getElementById("messageContainer");
-      var messageElement = document.createElement("div");
-      messageElement.classList.add("message");
-      messageElement.appendChild(sender);
-      messageElement.appendChild(content);
-      messageContainer.appendChild(messageElement);
-    }
-  </script>
-</body>
-</html>
+            <link rel="stylesheet" href="styles.css">
+            
+            <style>
+              /*
+                Figma Background for illustrative/preview purposes only.
+                You can remove this style tag with no consequence
+              */
+              body {background: #E5E5E5; }
+            </style>
+          
+          </head>
+          
+          <body>
+            <div class=e0_3><div  class="e1_2"></div><span  class="e1_3">PlayBAF</span><span  class="e3_2">Скоро здесь появится *Автодонат*</span><div  class="e3_3"></div><div  class="e1_5"></div><span  class="e1_6">IP:playbaf.ru-mc.ru</span><span  class="e1_4">Майнкрафт сервер анархии на версии 1.17.1</span></div>
+          </body>
+          </html>
